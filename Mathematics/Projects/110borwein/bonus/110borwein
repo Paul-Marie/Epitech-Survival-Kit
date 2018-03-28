@@ -1,0 +1,105 @@
+#!/usr/bin/env python3
+
+import sys
+import math
+import os
+import random
+from tkinter import *
+
+def     man_help():
+    print("USAGE")
+    print("\t\t./110borwein n\n")
+    print("DESCRIPTION")
+    print("\t\tn\tconstant defining the integral to be computed");
+
+def     valid_string(string):
+    i = 0
+    while (i < len(string)):
+        if (string[i] != '-' and (string[i] < '0' or string[i] > '9')):
+            sys.stdout.write("Invalid argument\n")
+            exit(84)
+        i = i + 1
+
+def     rectangle_method(x):
+    result = 0.0
+    b = 5000
+    a = 0
+    n = 10000
+    h = (b - a) / n
+    while (a < 10000):
+        result = result + get_sum(x, a * h)
+        a = a + 1
+    result = result * h
+    return (result)
+
+def     trapezoids_method(x):
+    result = 0.0
+    b = 5000
+    n = 10000
+    h = b / n
+    a = 1
+    while (a < 10000):
+        result = result + get_sum(x, a * h)
+        a = a + 1
+    result = result * 2
+    result = result + get_sum(x, 5000)
+    result = result + get_sum(x, 0)
+    result = result * (h / 2)
+    return (result)
+
+def     simpson_method(x):
+    res = 0.0
+    ult = 0.0
+    b = 5000
+    n = 10000
+    h = b / n
+    a = 1
+    while (a < 10000):
+        res = res + get_sum(x, a * h)
+        a = a + 1
+    a = 0
+    while (a < 10000):
+        ult = ult + get_sum(x, (a * h) + (h / 2))
+        a = a + 1
+    result = get_sum(x, 5000) + get_sum(x, 0) + (2 * res) + (4 * ult)
+    result = result * (b / (6 * n))
+    return (result)
+
+def     get_sum(x, i):
+    result = 1.0
+    a = 0
+    while (a <= x):
+        if (i != 0):
+            result = result * (math.sin(i / (2 * a + 1)) / (i / (2 * a + 1)))
+        a = a + 1
+    return (result)
+
+if (len(sys.argv) == 2):
+    if (sys.argv[1] == "-h"):
+        man_help()
+        exit(0)
+
+    if (sys.argv[1].isdigit() == True):
+        x = float(sys.argv[1])
+        end = float(sys.argv[1]) + 10;
+        fenetre = Tk()
+        fenetre.title("Borwein")
+        canvas = Canvas(fenetre, width = 1920, height = 1080)
+        while (x < end):
+            result = rectangle_method(x)
+            canvas.create_rectangle(465, 1920, 485, result * 200, fill='red', width = 0)
+            result = trapezoids_method(x)
+            canvas.create_rectangle(950, 1920, 970, result * 200, fill='red', width = 0)
+            result = simpson_method(x)
+            canvas.create_rectangle(1435, 1920, 1455, result * 200, fill='red', width = 0)
+            x = x + 1
+        canvas.create_line(0, int((math.pi / 2) * 200), 1920, int((math.pi / 2) * 200), fill = 'blue', width = 2)
+        canvas.pack()
+        fenetre.mainloop()
+    else:
+        sys.stdout.write("Not an integer number\n")
+        exit(84)
+
+else:
+    sys.stdout.write("Invalid number of argument\n")
+    exit(84)

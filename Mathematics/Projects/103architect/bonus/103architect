@@ -1,0 +1,86 @@
+#!/usr/bin/python2.7
+
+import sys
+import math
+import os
+import random
+
+if (len(sys.argv) != 5 and len(sys.argv) != 6):
+    exit (84)
+if (sys.argv[3] != "-t" and sys.argv[3] != "-h"
+    and sys.argv[3] != "-r" and sys.argv[3] != "-s"):
+    exit (84)
+if (sys.argv[3] == "-t" and len(sys.argv) != 6):
+    exit (84)
+if (sys.argv[3] == "-h" and len(sys.argv) != 6):
+        exit (84)
+if (sys.argv[3] == "-r" and len(sys.argv) != 5):
+        exit (84)
+if (sys.argv[3] == "-s" and len(sys.argv) != 5):
+        exit (84)
+
+x = int(sys.argv[1])
+y = int(sys.argv[2])
+
+class bcolors:
+    HEADER = '\033[93m'
+    ENDC = '\033[0m'
+    
+def     trans():
+    i = int(sys.argv[4])
+    j = int(sys.argv[5])
+    print str(bcolors.HEADER + "Translation by the vector (" + "%.0f" % i + str(", ") + "%.0f" % j + str(")"))
+    print str("1.00\t0.00\t" + "%.2f" % i)
+    print str("0.00\t1.00\t" + "%.2f" % j)
+    print str("0.00\t0.00\t1.00")
+
+def     homo():
+    i = int(sys.argv[4])
+    j = int(sys.argv[5])
+    print str(bcolors.HEADER + "Homothety by the ratios " + "%.0f" % i + " and " + "%.0f" % j)
+    print str("%.2f" % i + "\t0.00\t0.00")
+    print str("0.00\t" + "%.2f" % j + "\t0.00")
+    print str("0.00\t0.00\t1.00")
+
+def     rotate():
+    a = math.radians(int(sys.argv[4]))
+    print str(bcolors.HEADER + "Rotation at a " + "%.0f" % a + " degree angle")
+    print str("%.2f" % (math.cos(a)) + "\t" + "%.2f" % (-math.sin(a)) + "\t0.00")
+    print str("%.2f" % (math.sin(a)) + "\t" + "%.2f" % (math.cos(a)) + "\t0.00")
+    print str("0.00\t0.00\t1.00")
+
+def     sym():
+    a = math.radians(int(sys.argv[4]))
+    print str(bcolors.HEADER + "Symmetry about an axis inclined with an angle of " + "%.0f" % a + " degrees")
+    print str("%.2f" % (math.cos(2 * a)) + "\t%.2f" % (math.sin(2 * a)) + "\t0.00")
+    print str("%.2f" % (math.sin(2 * a)) + "\t" + "%.2f" % -(math.cos(2 * a)) + "\t0.00")
+    print str("0.00\t0.00\t1.00")
+
+if (sys.argv[3] == "-t"):
+    i = int(sys.argv[4])
+    j = int(sys.argv[5])
+    result_x = x + i
+    result_y = y + j
+    trans()
+
+if (sys.argv[3] == "-h"):
+    i = int(sys.argv[4])
+    j = int(sys.argv[5])
+    result_x = cos(a) * x + -sin(a) * y
+    result_y = sin(a) * x + cos(a) * y
+    homo()
+
+if (sys.argv[3] == "-r"):
+    a = math.radians(int(sys.argv[4]));
+    result_x = math.cos(a) * x + -math.sin(a) * y
+    result_y = math.sin(a) * x + math.cos(a) * y
+    rotate()
+
+if (sys.argv[3] == "-s"):
+    a = math.radians(int(sys.argv[4]));
+    result_x = math.cos(2 * a) * x + math.sin(2 * a) * y
+    result_y = math.sin(2 * a) * x + -math.cos(2 * a) * y
+    sym()
+
+print str("(" + "%.0f" % x + "," + "%.0f" % y + ") => (" + "%.2f" % result_x + "," + "%.2f" % result_y + ")"),
+print bcolors.ENDC

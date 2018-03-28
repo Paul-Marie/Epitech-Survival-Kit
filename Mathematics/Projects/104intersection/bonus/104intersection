@@ -1,0 +1,250 @@
+#!/usr/bin/python2.7
+
+from Tkinter import *
+import sys
+import math
+import os
+import random
+
+fenetre = Tk()
+canvas = Canvas(fenetre, width = 1200, height = 1200, background = 'black')
+
+if (len(sys.argv) != 9):
+    exit (84)
+
+def     sphere():
+    Mx = int(sys.argv[2])
+    My = int(sys.argv[3])
+    Mz = int(sys.argv[4])
+    Vx = int(sys.argv[5])
+    Vy = int(sys.argv[6])
+    Vz = int(sys.argv[7])
+    r = int(sys.argv[8])
+    
+    if (Mx >= 0):
+        Vx_a = (Vx) ** 2
+        Vx_b = (2 * Vx * Mx)
+        Vx_c = (Mx) ** 2
+    else:
+        Vx_a = (Vx) ** 2
+        Vx_b = (-2 * Vx * Mx)
+        Vx_c = (Mx) ** 2
+                        
+    if (My >= 0):
+        Vy_a = (Vy) ** 2
+        Vy_b = (2 * Vy * My)
+        Vy_c = (My) ** 2
+    else:
+        Vy_a = (Vy) ** 2
+        Vy_b = (-2 * Vy * My)
+        Vy_c = (My) ** 2
+
+    if (Mz >= 0):
+        Vz_a = (Vz) ** 2
+        Vz_b = (2 * Vz * Mz)
+        Vz_c = (Mz) ** 2
+    else:
+        Vz_a = (Vz) ** 2
+        Vz_b = (-2 * Vz * Mz)
+        Vz_c = (Mz) ** 2
+
+    a = Vx_a + Vy_a + Vz_a
+    b = Vx_b + Vy_b + Vz_b
+    c = Vx_c + Vy_c + Vz_c
+    c = c - (r) ** 2
+    delta = (b) ** 2 - (4 * a * c)
+
+    if (delta > 0):
+        x1 = (-b - math.sqrt(delta))/(2 * a)
+        x2 = (-b + math.sqrt(delta))/(2 * a)
+        x = (Vx * x1 + Mx) + 5
+        y = (Vy * x1 + My) + 5
+        u = (Vx * x2 + Mx) + 5
+        v = (Vy * x2 + My) + 5
+        h = (math.sqrt((x - u) ** 2 + (y - v) ** 2) * 100) / 2
+        centerx = (u + (x - u) / 2) * 100
+        centery = (v + (y - v) / 2) * 100
+        x = x * 100
+        y = y * 100
+        u = u * 100
+        v = v * 100
+        Mx = (Mx + 5) * 100
+        My = (My + 5) * 100
+        Vx = Vx * 100
+        Vy = Vy * 100
+        r = r * 100
+        hypotenuse = ((h) ** 2 - (r) ** 2)
+        if (hypotenuse < 0):
+            hypotenuse = math.sqrt(hypotenuse * -1)
+        else:
+            hypotenuse = math.sqrt(hypotenuse)
+        teta = (math.atan(h / hypotenuse))
+        s = hypotenuse * math.sin(teta)
+        t = hypotenuse * math.cos(teta)
+        Px = centerx - t
+        Py = centery + s
+
+        ligne = canvas.create_line(Mx, My, Mx + Vx, My + Vy, fill = 'blue')
+        ligne = canvas.create_line(Mx, My, Mx - Vx, My - Vy, fill = 'blue')
+        sphere = canvas.create_oval(Px - r, Py - r, Px + r, Py + r, outline = 'green')
+        inter1 = canvas.create_oval(x - 1.5, y - 1.5, x + 1.5, y + 1.5, outline = 'red', fill = 'red')
+        inter2 = canvas.create_oval(u - 1.5, v - 1.5, u + 1.5, v + 1.5, outline = 'red', fill = 'red')
+        origin = canvas.create_oval(Mx - 1.5, My - 1.5, Mx + 1.5, My + 1.5, outline = 'white', fill = 'white')
+
+    elif (delta == 0):
+        t = (-float(b))/(2 * float(a))
+        x = Vx * t + Mx
+        y = Vy * t + My
+        print str("=0")
+
+    else:
+        print str("<0")
+
+    canvas.pack()
+
+###################################################################################
+
+def     cylindre():
+    Mx = int(sys.argv[2])
+    My = int(sys.argv[3])
+    Mz = int(sys.argv[4])
+    Vx = int(sys.argv[5])
+    Vy = int(sys.argv[6])
+    Vz = int(sys.argv[7])
+    r = int(sys.argv[8])
+    
+    print str("cylinder of radius " + "%.0f" % r)
+    print str("straight line going through the (" + "%.0f" % Mx + "," + "%.0f" % My
+              + "," + "%.0f" % Mz + ") point and of direction vector ("
+              + "%.0f" % Vx + "," + "%.0f" % Vy + "," + "%.0f" % Vz + ")")
+
+    if (Mx >= 0):
+        Vx_a = (Vx) ** 2
+        Vx_b = (2 * Vx * Mx)
+        Vx_c = (Mx) ** 2
+    else:
+        Vx_a = (Vx) ** 2
+        Vx_b = (-2 * Vx * Mx)
+        Vx_c = (Mx) ** 2
+        
+    if (My >= 0):
+        Vy_a = (Vy) ** 2
+        Vy_b = (2 * Vy * My)
+        Vy_c = (My) ** 2
+    else:
+        Vy_a = (Vy) ** 2
+        Vy_b = (-2 * Vy * My)
+        Vy_c = (My) ** 2
+
+    a = Vx_a + Vy_a
+    b = Vx_b + Vy_b
+    c = Vx_c + Vy_c
+    c = c - (r) ** 2
+    delta = (b) ** 2 - (4 * a * c)
+
+    if (delta > 0):
+        x1 = (-b - math.sqrt(delta))/(-2 * a)
+        x2 = (-b + math.sqrt(delta))/(-2 * a)
+        x = Vx * x1 + Mx
+        y = Vy * x1 + My
+        z = Mz
+        u = Vx * x2 + Mx
+        v = Vy * x2 + My
+        w = Mz
+        
+        print str("2 intersection points :")
+        print str("(" + "%.3f" % x + ", " + "%.3f" % y + ", " + "%.3f" % z + ")")
+        print str("(" + "%.3f" % u + ", " + "%.3f" % v + ", " + "%.3f" % w + ")")
+
+    elif (delta == 0):
+        t = (-float(b))/(2 * float(a))
+        x = Vx * t + Mx
+        y = Vy * t + My
+        z = Mz
+        
+        print str("1 intersection point :")
+        print str("(" + "%.3f" % x + ", " + "%.3f" % y + ", " + "%.3f" % z + ")")
+    else:
+        print str("No intersection point.")
+        
+def     cone():
+    Mx = int(sys.argv[2])
+    My = int(sys.argv[3])
+    Mz = int(sys.argv[4])
+    Vx = int(sys.argv[5])
+    Vy = int(sys.argv[6])
+    Vz = int(sys.argv[7])
+    angle = int(sys.argv[8])
+
+    print str("cone of " + "%.0f" % angle + " degree angle")
+    print str("straight line going through the (" + "%.0f" % Mx + "," + "%.0f" % My
+              + "," + "%.0f" % Mz + ") point and of direction vector ("
+              + "%.0f" % Vx + "," + "%.0f" % Vy + "," + "%.0f" % Vz + ")")
+
+    if (Mx >= 0):
+        Vx_a = (Vx) ** 2
+        Vx_b = (2 * Vx * Mx)
+        Vx_c = (Mx) ** 2
+    else:
+        Vx_a = (Vx) ** 2
+        Vx_b = (-2 * Vx * Mx)
+        Vx_c = (Mx) ** 2
+
+    if (My >= 0):
+        Vy_a = (Vy) ** 2
+        Vy_b = (2 * Vy * My)
+        Vy_c = (My) ** 2
+    else:
+        Vy_a = (Vy) ** 2
+        Vy_b = (-2 * Vy * My)
+        Vy_c = (My) ** 2
+
+    if (Mz >= 0):
+        Vz_a = (Vz) ** 2
+        Vz_b = (2 * Vz * Mz)
+        Vz_c = (Mz) ** 2
+    else:
+        Vz_a = (Vz) ** 2
+        Vz_b = (-2 * Vz * Mz)
+        Vz_c = (Mz) ** 2
+
+    a = Vx_a + Vy_a - (Vz_a * math.tan(math.radians(angle)) ** 2)
+    b = Vx_b + Vy_b - (Vz_b * math.tan(math.radians(angle)) ** 2)
+    c = Vx_c + Vy_c - (Vz_c * math.tan(math.radians(angle)) ** 2)
+    delta = (b) ** 2 - (4 * a * c)
+    
+    if (delta > 0):
+        x1 = (-b - math.sqrt(delta))/(-2 * a)
+        x2 = (-b + math.sqrt(delta))/(-2 * a)
+        x = Vx * x1 + Mx
+        y = Vy * x1 + My
+        z = Vz * x1 + Mz
+        u = Vx * x2 + Mx
+        v = Vy * x2 + My
+        w = Vz * x2 + Mz
+        
+        print str("2 intersection points :")
+        print str("(" + "%.3f" % x + ", " + "%.3f" % y + ", " + "%.3f" % z + ")")
+        print str("(" + "%.3f" % u + ", " + "%.3f" % v + ", " + "%.3f" % w + ")")
+        
+    elif (delta == 0):
+        t = (-float(b))/(2 * float(a))
+        x = Vx * t + Mx
+        y = Vy * t + My
+        z = Vz * t + Mz
+        
+        print str("1 intersection point :")
+        print str("(" + "%.3f" % x + ", " + "%.3f" % y + ", " + "%.3f" % z + ")")
+    else:
+        print str("No intersection point.")
+
+if (sys.argv[1] == '1'):
+    sphere()
+
+if (sys.argv[1] == '2'):
+    cylindre()
+
+if (sys.argv[1] == '3'):
+    cone()
+
+fenetre.mainloop()

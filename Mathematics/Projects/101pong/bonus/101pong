@@ -1,0 +1,144 @@
+#!/usr/bin/python2.7
+
+import sys
+import math
+import os
+import random
+from pygame import *
+init()
+
+os.environ['SDL_VIDEO_WINDOW_POS'] = "0,0"
+fenetre = display.set_mode((1900, 1050), 0, 0)
+mixer.init(44100, -16, 2, 2048)
+font = font.SysFont("system", 142, bold=True, italic=False)
+display.set_caption('101Pong')
+son = mixer.Sound('song.wav')
+terrain = image.load('background.jpg')
+ball = image.load('rasengan.png')
+bat1 = image.load('bat.png')
+bat2 = image.load('bat.png')
+bat2_x = 1850
+bat2_y = 500
+bat1_x = 0
+bat1_y = 500                
+Etape = 0
+score1 = 0
+score2 = 0
+x = 25
+y = 25
+while (Etape == 0):
+    x = (x) * (-1)
+    lost = 0
+    ball_x = 900
+    ball_y = 500
+    
+    list1_UP = [bat1]
+    list2_UP = [bat1]
+    list_BALL = [ball]
+    list1_DOWN = [bat2]
+    list2_DOWN = [bat2]
+    
+    image_bat1 = {'UPPER': list1_UP, 'DOWNER': list1_DOWN}
+    image_bat2 = {'UP': list2_UP, 'DOWN': list2_DOWN}
+    image_ball = {'BALL': list_BALL}
+    
+    direction = 'UP'
+    sens = 'UPPER'
+    orientation = 'BALL'
+    
+    def     move_bats():
+        global bat1_x, bat1_y, bat2_x, bat2_y, ball_x, ball_y, x, y, score1, score2, lost
+        ev = event.poll()
+        k = key.get_pressed()
+        
+        if (k[K_PAGEUP] == 1):
+            bat2_y = bat2_y - 30
+            if (bat2_y <= 0):
+                bat2_y = 0
+                
+        if (k[K_PAGEDOWN] == 1):
+            bat2_y = bat2_y + 30
+            if (bat2_y >= 850):
+                bat2_y = 850
+                        
+        if (k[K_TAB] == 1):
+            bat1_y = bat1_y - 30
+            if (bat1_y <= 0):
+                bat1_y = 0
+
+        if (k[K_LSHIFT] == 1):
+            bat1_y = bat1_y + 30
+            if (bat1_y >= 850):
+                bat1_y = 850
+
+        if (ball_y <= 0 or ball_y >= 1000):
+            son.play()
+            y = (y) * (-1)
+
+        if ((ball_x == 50 and ball_y <= bat1_y + 235 and ball_y >= bat1_y - 35)):
+            son.play()
+            x = (x) * (-1)
+            y = (ball_y - bat1_y - 100) / 4
+
+        if ((ball_x == 1800 and ball_y <= bat2_y + 235 and ball_y >= bat2_y - 35)):
+            son.play()
+            x = (x) * (-1)
+            y =(ball_y - bat2_y - 100) / 4
+            
+        if ((ball_y == bat1_y - 50 and ball_x <= 50) and (ball_y > bat1_y + 200 and ball_x < 50)):
+            y = (y) * (-1)
+
+        if ((ball_y >= bat2_y - 50 and ball_x >= 1800) and (ball_y < bat2_y + 200 and ball_x > 1800)):
+            y = (y) * (-1)
+    
+        ball_x = ball_x + x
+        ball_y = ball_y + y
+        refresh_ecran = 1
+
+        if (ball_x <= -75):
+            score2 = score2 + 1
+            lost = 1
+            
+        if (ball_x >= 1925):
+            score1 = score1 + 1
+            lost = 1
+        
+        if (k[K_ESCAPE] == 1):
+            exit()
+   
+        refresh_ecran = 1
+    
+    def     mise_a_jour_terrain():
+        global direction, sens, orientation, index_ball, index_bat1, index_bat2, ball_x, ball_y, bat1_x, bat1_y, bat2_x, bat2_y, image_bat1, image_bat2, image_ball, score1, score2, refresh_ecran
+        #fenetre.blit(terrain, (0,0))
+        fenetre.blit(image_bat1[sens][index_bat1], (bat1_x, bat1_y))
+        fenetre.blit(image_bat2[direction][index_bat2], (bat2_x, bat2_y))
+        fenetre.blit(image_ball[orientation][index_ball], (ball_x, ball_y))
+        Text_Score1 = font.render(str(score1), 1, (255,255,255))
+        Text_Score2 = font.render(str(score2), 1, (255,255,255))
+        fenetre.blit(Text_Score1,(700,50))
+        fenetre.blit(Text_Score2,(1200,50))
+        refresh_ecran = 0
+        display.flip()
+        
+    Etape = 1
+    while (Etape == 1):
+        fenetre.blit(terrain, (0,0))
+        fenetre.blit(ball, (ball_x, ball_y))
+        fenetre.blit(bat1, (bat1_x, bat1_y))
+        fenetre.blit(bat2, (bat2_x, bat2_y))
+        index_ball = 0
+        index_bat1 = 0
+        index_bat2 = 0
+        refresh_ecran = 1
+        move_bats()
+
+        if (refresh_ecran == 1):
+            mise_a_jour_terrain()
+
+        while (lost == 1):
+            lost = 0
+            Etape = 0
+
+quit()
+exit()

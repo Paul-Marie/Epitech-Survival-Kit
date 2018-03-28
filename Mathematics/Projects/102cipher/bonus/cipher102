@@ -1,0 +1,81 @@
+#!/usr/bin/python2.7
+
+from Tkinter import*
+from cipher_fin import cipher
+
+fenetre = Tk()
+
+champ_label = Label(fenetre, font=50, text = "Bonus projet 102cipher !!\nL'objectif de cette interface est de coder et decoder une phrase a l'aide d'une clef\n\nAppuyez sur 'Next' pour continuer")
+bouton_quitter = Button(fenetre, text="Next", command=fenetre.destroy)
+
+champ_label.pack(padx=30, pady=30)
+bouton_quitter.pack(side="top")
+
+fenetre.mainloop()
+
+fenetre = Tk()
+
+cadre = Frame(fenetre, width=768, height=576, borderwidth=1)
+cadre2 = Frame(fenetre, width=768, height=576, borderwidth=1)
+
+champ_descr = Label(fenetre, font=50, text = "102cipher !")
+
+champ_affich1 = Label(cadre, font=50, text = "Texte a crypter :")
+champ_affich2 = Label(cadre2, font=50, text = "Texte a decrypter :")
+champ_key = Label(cadre, font=50, text = "Key :")
+champ_key2 = Label(cadre2, font=50, text = "Key :")
+champ_res = Label(cadre, font=50, text = "Resultat :")
+champ_res2 = Label(cadre2, font=50, text = "Resultat :")
+
+var_aff1 = StringVar()
+ligne_aff1 = Entry(cadre, textvariable=var_aff1, width=50)
+var_aff2 = StringVar()
+ligne_aff2 = Entry(cadre2, textvariable=var_aff2, width=50)
+var_key1 = StringVar()
+ligne_key1 = Entry(cadre, textvariable=var_key1, width=10)
+var_key2 = StringVar()
+ligne_key2 = Entry(cadre2, textvariable=var_key2, width=10)
+
+fin = Frame(fenetre, width=768, height=576, borderwidth=1)
+bouton_crypt = Button(fin, text="Next", command=fenetre.quit)
+
+var_case1 = IntVar()
+case1 = Checkbutton(cadre, text="Coder", variable=var_case1)
+var_case2 = IntVar()
+case2 = Checkbutton(cadre2, text="Decoder", variable=var_case2)
+
+champ_descr.pack(padx=300, pady=30, side="top")
+
+cadre.pack(fill=BOTH, side="left")
+cadre2.pack(fill=BOTH, side="right")
+
+champ_affich1.pack(padx=30, pady=30)
+ligne_aff1.pack(padx=100)
+champ_key.pack(padx=30, pady=30)
+ligne_key1.pack(padx=100)
+case1.pack(pady=30)
+champ_affich2.pack(padx=30, pady=30)
+ligne_aff2.pack(padx=100)
+champ_key2.pack(padx=30, pady=30)
+ligne_key2.pack(padx=100)
+case2.pack(pady=30)
+
+fin.pack(fill=BOTH, side="bottom")
+bouton_crypt.pack()
+
+champ_cr = Label(cadre, text = "le message code s'affichera ici !")
+champ_cr.pack(padx=30, pady=15)
+champ_decr = Label(cadre2, text = "le message decode s'affichera ici !")
+champ_decr.pack(padx=30, pady=15)
+
+fenetre.mainloop()
+
+if (var_case1.get() == 1):
+    champ_cr["text"] = cipher(var_aff1.get(), var_key1.get(), 0)
+    champ_cr.pack(padx=30, pady=15)
+if (var_case2.get() == 1):
+    champ_decr["text"] = cipher(var_aff2.get(), var_key2.get(), 1)
+    champ_decr.pack(padx=30, pady=15)
+bouton_crypt["text"] = "Exit"
+
+fenetre.mainloop()

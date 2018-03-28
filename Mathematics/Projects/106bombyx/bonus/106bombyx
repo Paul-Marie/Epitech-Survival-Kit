@@ -1,0 +1,160 @@
+#!/usr/bin/python2.7
+
+import time
+import sys
+import math
+import os
+import random
+from Tkinter import *
+
+#####################################################################################
+##            ##            ##          MAN_HELP        ##            ##           ##
+#####################################################################################
+
+def     man_help():
+    print "USAGE"
+    print "\t\t./106bombyx n [k | i0 i1]"
+    print
+    print "DESCRIPTION"
+    print "\t\tn\tnumber of first generation individuals"
+    print "\t\tk\tgrowth rate from 1 to 4"
+    print "\t\ti0\tinitial generation (included)"
+    print "\t\ti1\tfinal generation (included)"
+
+#####################################################################################
+##            ##            ##        BUTTERFLY         ##            ##           ##
+#####################################################################################
+
+def     butterfly():
+    print str("\n\n\n\n\n           .==-.                   .-==.")
+    print str("            \()8`-._  `.   .'  _.-'8()/")
+    print str("            (88\"   ::.  \./  .::   \"88)")
+    print str("             \_.'`-::::.(#).::::-'`._/")
+    print str("               `._... .q(_)p. ..._.'")
+    print str("                 \"\"-..-'|=|`-..-\"\"")
+    print str("                 .\"\"' .'|=|`. `\"\".")
+    print str("               ,':8(o)./|=|\.(o)8:`.")
+    print str("              (O :8 ::/ \_/ \:: 8: O)")
+    print str("               \O `::/       \::' O/")
+    print str("                \"\"--'         `--\"\"\n\n\n\n\n")
+
+#####################################################################################
+##            ##            ##        VALID_STRING      ##            ##           ##
+#####################################################################################
+
+def     valid_string(string):
+    i = 0
+    while (i < len(string)):
+        if (string[i] < '.' and string[i] > '/'
+            and string[i] < '0' or string[i] > '9'):
+            sys.stdout.write("Invalid argument")
+            exit(84)
+        i = i + 1
+
+#####################################################################################
+##            ##            ##       FIRST_PART         ##            ##           ##
+#####################################################################################
+
+def     calc(event):
+    global n, k
+    z = 0
+    tmp = 0
+    i = 1
+    t = 0
+    while (i < 100):
+        n = k * n * ((1000 - n) / 1000)
+        i = i + 1
+        while (t < int(n)):
+            a = random.randint(0, 570)
+            b = random.randint(0, 570)
+            z = random.randint(1, 6)
+            if (z == 1):
+                butty = photo
+            elif (z == 2):
+                butty = photo2
+            elif (z == 3):
+                butty = photo3
+            elif (z == 4):
+                butty = photo4
+            elif (z == 5):
+                butty = photo5
+            elif (z == 6):
+                butty = photo6
+            tab.append(canvas.create_image(a, b, anchor = NW, image = butty))
+            canvas.update()
+            time.sleep(0.0005)
+            t = t + 1
+            tmp = tmp + 1
+        z = tmp
+        while (t > int(n)):
+            t = t - 1
+            z = z - 1
+            canvas.delete(tab[z])
+            canvas.update()
+            time.sleep(0.0005)
+
+#####################################################################################
+##            ##            ##          MAIN            ##            ##           ##
+#####################################################################################
+
+if (len(sys.argv) == 2 or len(sys.argv) == 3 or len(sys.argv) == 4):
+
+    i = 0
+    d = 1
+    tab = []
+    num_arg = len(sys.argv)
+
+    if (sys.argv[1] == "-h"):
+        man_help()
+        exit(0)
+
+    if (sys.argv[1] == "-butterfly"):
+        butterfly()
+        exit(0)
+
+    while (d < num_arg):
+        valid_string(sys.argv[d])
+        d = d + 1
+
+    if (num_arg == 3):
+        n = float(sys.argv[1])
+        k = float(sys.argv[2])
+        fenetre = Tk()
+        fenetre.title("Butty")
+        photo = PhotoImage(file = "butty.png")
+        photo2 = PhotoImage(file = "butty2.png")
+        photo3 = PhotoImage(file = "butty3.png")
+        photo4 = PhotoImage(file = "butty4.png")
+        photo5 = PhotoImage(file = "butty5.png")
+        photo6 = PhotoImage(file = "butty6.png")
+        canvas = Canvas(fenetre, width = 600, height = 600)
+        rond = canvas.create_oval(250, 250, 350, 350, fill = 'red')
+        canvas.tag_bind(rond, '<Button-1>', calc)
+        canvas.pack()
+        fenetre.mainloop()
+
+    if (num_arg == 4):
+        i = float(1)
+        n = float(sys.argv[1])
+        k = float(sys.argv[2])
+        width = 0
+        Ax = width
+        Ay = abs(1000 - n)
+        fenetre = Tk()
+        fenetre.title("Butty")
+        canvas = Canvas(fenetre, width = 1920, height = 1080)
+        while (i < 100):
+            n = k * n * ((1000 - n) / 1000)
+            width = width + (19.2 / 1.25)
+            Bx = width
+            By = abs(1000 - n)
+            canvas.create_line(Ax, Ay + 40, Bx, By + 40, fill = 'red', width = 2)
+            Ax = Bx
+            Ay = By
+            i = i + 0.8
+        canvas.pack()
+        fenetre.mainloop()
+
+else:
+    sys.stdout.write("Invalid number of argument")
+    exit(84)

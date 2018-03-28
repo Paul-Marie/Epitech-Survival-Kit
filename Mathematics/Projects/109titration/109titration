@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+#
+# Simple program to calculate the equivalent point of a solution 
+# made in python 3, you can launch it with:
+# ./109titration file
+# (See subject for more details)
+#
+
+import sys
+import math
+import os
+import random
+from decimal import *
+
+def     man_help():
+    print("USAGE")
+    print("\t\t./109titration file\n")
+    print("DESCRIPTION")
+    print("\t\tfile\ta csv file containing \"vol;ph\" lines")
+
+def     get_number(char):
+    try:
+        nbr = int(char)
+    except:
+        try:
+            nbr = float(char)
+        except:
+            exit (84)
+    return (nbr)
+
+def     create_tab(buff):
+    buff = buff.split('\n')
+    tab = []
+    for i in range(len(buff) - 1):
+        tab.append([])
+    for s in range(len(buff) - 1):
+        try:
+            tab[s] = buff[s]
+            tab[s] = tab[s].split(';')
+            tab[s][0] = get_number(tab[s][0])
+            tab[s][1] = get_number(tab[s][1])
+        except:
+            exit(84)
+    return (tab)
+
+def     get_estimation_point(tab, point):
+    if (tab[point - 1][0] >= tab[point + 1][0]):
+        equi_point = tab[point - 1][0]
+    else:
+        equi_point = tab[point + 1][0]
+    return (equi_point)
+
+try:
+    if (len(sys.argv) == 2):
+        if (sys.argv[1] == "-h"):
+            man_help()
+            exit (0)
+
+        try:
+            fd = open(sys.argv[1], "r")
+            buff = fd.read()
+        except FileNotFoundError:
+            sys.stdout.write("file \"")
+            sys.stdout.write(sys.argv[1])
+            sys.stdout.write("\" not found or not permission\n")
+            exit (84)
+        if (len(buff) == 0):
+            exit (84)
+        tab = create_tab(buff)
+        i = 1
+        derivative = []
+        print("Derivative:")
+        while (i != len(tab) - 1):
+            result = (tab[i + 1][1] - tab[i - 1][1]) / (tab[i + 1][0] - tab[i - 1][0])
+            derivative.append(result)
+            print (str("volume: " + str(tab[i][0]) + " ml -> " + "%.2f" % result))
+            i = i + 1
+        tmp = 0
+        equivalent_point = float(tab[0][1])
+        for s in range(len(derivative)):
+            if (derivative[s] >= equivalent_point):
+                equivalent_point = derivative[s]
+                tmp = s
+        print(str("\nEquivalent point at " + str(tab[tmp + 1][0]) + " ml"))
+        print("\nSecond derivative:")
+        i = 2
+        s = 1
+        second = []
+        while (i != len(tab) - 2):
+            deri = Decimal((derivative[s + 1] - derivative[s - 1]) / (tab[i + 1][0] - tab[i - 1][0]))
+            second.append(deri)
+            print (str("volume: " + str(tab[i][0]) + " ml -> " + "%.2f" % deri))
+            i = i + 1
+            s = s + 1
+    else:
+        sys.stdout.write("Invalid number of argument\n")
+        exit(84)
+
+except:
+    exit(84)

@@ -1,0 +1,133 @@
+#!/usr/bin/python2.7
+#
+# Simple program to calculate the butterfly poppulation over time
+# made in python 2.7, you can launch it with:
+# ./106bombyx first_gen_number [growth_rate | initial_generation final_generation]
+# (See subject for more details)
+#
+
+import sys
+import math
+import os
+import random
+
+#####################################################################################
+##            ##            ##          MAN_HELP        ##            ##           ##
+#####################################################################################
+
+def     man_help():
+    print "USAGE"
+    print "\t\t./106bombyx n [k | i0 i1]"
+    print
+    print "DESCRIPTION"
+    print "\t\tn\tnumber of first generation individuals"
+    print "\t\tk\tgrowth rate from 1 to 4"
+    print "\t\ti0\tinitial generation (included)"
+    print "\t\ti1\tfinal generation (included)"
+
+#####################################################################################
+##            ##            ##        VALID_STRING      ##            ##           ##
+#####################################################################################
+
+def     valid_string(string):
+    i = 0
+    while (i < len(string)):
+        if (string[i] < '.' and string[i] > '/'
+            and string[i] < '0' or string[i] > '9'):
+            sys.stdout.write("Invalid argument")
+            exit(84)
+        i = i + 1
+
+#####################################################################################
+##            ##            ##       FIRST_PART         ##            ##           ##
+#####################################################################################
+
+def     first_part(n, k):
+    i = 1
+    print str(str(i) + " " + str(round(n, 2)) + "0")
+    while (i < 100):
+        n = k * n * ((1000 - n) / 1000)
+        if (n < 0):
+            n = 0
+        i = i + 1
+        if (float(str("%.1f" % (n))) == round(n, 2)):
+            print str(str(i) + " " + str(round(n, 2)) + "0")
+        else:
+            print str(str(i) + " " + str(round(n, 2)))
+
+#####################################################################################
+##            ##            ##       SECOND_PART        ##            ##           ##
+#####################################################################################
+
+def     second_part(n, i0, i1):
+
+    k = float(1)
+
+    tmp = n
+    while (k < 4):
+        i = 1
+        n = float(tmp)
+        while (i < i0):
+            n = k * n * ((1000 - n) / 1000)
+            if (n < 0):
+                n = 0
+            i = i + 1
+
+        while (i <= i1):
+            if (float(str("%.1f" % (n))) == round(n, 2)):
+                print str("%.2f" % k + " " + str(round(n, 2)) + "0")
+            else:
+                print str("%.2f" % k + " " + str(round(n, 2)))
+            n = k * n * ((1000 - n) / 1000)
+            if (n < 0):
+                n = 0
+            i = i + 1
+
+        k = k + 0.01
+
+#####################################################################################
+##            ##            ##          MAIN            ##            ##           ##
+#####################################################################################
+
+if (len(sys.argv) == 2 or len(sys.argv) == 3 or len(sys.argv) == 4):
+
+    i = 0
+    d = 1
+    num_arg = len(sys.argv)
+
+    if (sys.argv[1] == "-h"):
+        man_help()
+        exit(0)
+    elif (num_arg == 2):
+        sys.stdout.write("Invalid number of argument\n")
+        exit(84)
+
+    while (d < num_arg):
+        valid_string(sys.argv[d])
+        d = d + 1
+
+    if (float(sys.argv[1]) < 0):
+        sys.stdout.write("n can't be negative\n")
+        exit(84)
+    if (num_arg == 3):
+        n = float(sys.argv[1])
+        if (float(sys.argv[2]) < 1 or float(sys.argv[2]) > 4):
+            exit(84)
+        k = float(sys.argv[2])
+        first_part(n, k)
+
+    elif (num_arg == 4):
+        n = float(sys.argv[1])
+        try:
+            i0 = int(sys.argv[2])
+            i1 = int(sys.argv[3])
+        except ValueError:
+            sys.stdout.write("fuck u\n")            
+            exit(84)
+        if (i0 >= i1):
+            exit(84)
+        second_part(n, i0, i1)
+
+else:
+    sys.stdout.write("Invalid number of argument\n")
+    exit(84)

@@ -1,0 +1,31 @@
+.\" Manpage for 110borwein.
+.\" Contact nathan.michel@epitech.eu to correct errors or typos.
+.TH man 8 "15 Apr 2017" "1.0" "110borwein man page"
+.SH NAME
+110borwein \- calculate borwein's integral with 3 differents methods.
+.SH SYNOPSIS
+ ./110borwein n
+.SH DESCRIPTION
+n   constant defining the integral to be computed
+.SH OPTIONS
+the n constant must be an integer
+.SH SEE ALSO
+110borwein(1), 110borwein(5), 110borwein(8)
+.SH BUGS
+No known bugs, because it's a perfect proram :p.
+.SH EXAMPLE
+ ./110borwein 0
+ 
+ Rectangles: 
+ I0 = 1.8208154789 
+ diff = 0.2500191521
+ 
+ Trapezoids:
+ I0 = 1.5707660806
+ diff = -0.0000302462
+ 
+ Simpson:
+ I0 = 1.5707654320
+ diff = -0.0000308948
+.SH AUTHOR
+Nathan Michel (nathan.michel@epitech.eu)
