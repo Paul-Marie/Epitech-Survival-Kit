@@ -1,0 +1,195 @@
+##
+##  This is a Basic Makefile Template
+##  Copyright (C) 2017  paul-marie.bettinelli@epitech.eu
+##
+##  This program is free software: you can redistribute it and/or modify
+##  it under the terms of the GNU General Public License as published by
+##  the Free Software Foundation, either version 3 of the License, or
+##  any later version.
+##
+##  This program is distributed in the hope that it will be useful,
+##  but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##  GNU General Public License for more details.
+##
+##  You should have received a copy of the GNU General Public License
+##  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+##
+
+CC	=	@gcc
+AR	=	@ar rc
+RM	=	@rm -f
+
+##
+## the addprefix will add the recurring path (here "src/")
+## in front of each element in the parenthesis, which is the equivalent of to:
+## "src/your_file1.c, src/your_file2.c, etc...".
+##
+
+SRC	=	$(addprefix src/,	\
+		your_file1.c		\
+		your_file2.c		\
+		your_file3.c		\
+		main.c)
+
+##
+## don't use LIB if you haven't planned to use your own lib (ex: my_lib.a).
+##
+
+LIB	=	$(addprefix lib/,	\
+		your_lib_file1.c	\
+		your_lib_file2.c	\
+		your_lib_file3.c	\
+		your_lib_file4.c)
+
+##
+## NAME will be the name of the compiled software.
+## NOM will allow us to keep only the file name (and not the path / extension)
+## so the file "repo1/repo2/your_file.c" will lead to "your_file",
+## and will be the same for all file in the SRC variable.
+##
+
+NAME	=	your_project_name
+NOM	=	$(basename $(notdir $(SRC)))
+
+##
+## OBJ variable will create the objects files in the obj/ directory,
+## and OBJL will create the libs' object file in the src/ folder.
+##
+
+OBJ	=	$(addprefix obj/, $(addsuffix .o, $(NOM)))
+OBJL	=	$(LIB:.c=.o)
+
+##
+## with CFLAGS (used by the compiler), you will override the defaults environments variables with your own
+## here -Wall (this flag will enable all defaults compilation flags),
+## -Wextra (previously called -W) enable some extra warning not enabled by -Wall
+## -Werror consider warnings as errors.
+## -g3 is a debugging flag who give some extra information to debuggers (like gdb, valgrinds, etc...)
+## be sure to remove it when you are done debugging.
+##
+
+CFLAGS	=	-Wall -Wextra -Werror -g3
+
+##
+## CPPFLAGS is used by the preprocessor, here I put "-Iinclude" so the compiler know
+## what folder (here, include/) contain the headers,
+## -Ilib/my/ will ensure that the lib/my/ folder will be the one scanned while looking for headers.
+##
+
+CPPFLAGS=	-Iinclude
+
+##
+## LDFLAGS: Extra flags to give to the compiler upon the ld linker invocation, such as "-L. my_lib.a".
+## LDFLAGS should be used for flags/search paths, like -Llib/your_lib.a,
+## it will link your custom lib with your others files.
+##
+
+LDFLAGS	=	-Llib/your_lib.a
+
+##
+## LDLIBS: Library flags or names given to the compiler upon linker invocation.
+## put here all "standard" libraries name, like "-lm", "-lmy", "lncurses", etc...
+##
+
+LDLIBS	=	-lm
+
+##
+## "all" is the main directive, it will the first to be invoked when you simply use "make".
+##
+## Targets who don't create a file with the same name as themselves are called phony targets.
+## Other targets are sometimes called file targets. Whether a target is a phony target is a property of the recipe.
+## make is not able to infer this property, but there is a way to explicitly declare them:
+## .PHONY: your_rule
+##
+## Clark Grubb's Makefile style guide recommends to add each phony target
+## as a prerequisite of .PHONY immediately before the target declaration,
+## rather than listing all the phony targets in a single place.
+##
+
+.PHONY:	all
+all:	$(NAME)
+
+##
+## $(OBJ) and $(OBJL) are the recipe's rule, this rule can't be establish if
+## these two recipes are not completed.
+##
+## "$(AR) lib/your_lib.a $(OBJL)" will create your lib in the "lib" folder.
+##
+## "$(CC) $(CFLAGS) ..." will simply compile your project and give it the appropriate name thanks to "-o $(NAME)".
+##
+## The eval function is very special: it allows you to define new makefile constructs that are not constant;
+## which are the result of evaluating other variables and functions. The argument to the eval function is expanded,
+## then the results of that expansion are parsed as makefile syntax.
+## In that case, I assigned the $(MAK) variable to 42.
+##
+## the ifeq directive will compare the $(VOID) value and execute the "@echo -e ..."
+## only if $(VOID) is empty (aka compilation without any error), else an error message is displayed.
+## 
+##
+
+$(NAME):	$(OBJ) $(OBJL)
+	$(AR) lib/your_lib.a $(OBJL)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDLIBS) -o $(NAME) $(OBJ) -L. ./lib/your_lib.a
+ifeq ($(VOID),)
+	@echo -e "\033[32m* * * * * COMPLETED * * * * *\033[0m"
+else
+        @$(error an error occurred while compiling)
+endif
+
+##
+## This rule will allow you to clean your repository easily, just write "make clean"
+## to delete all of your objects file.
+##
+
+.PHONY:	clean
+clean:
+	$(RM) $(OBJ)
+	$(RM) $(OBJL)
+
+##
+## fclean, invoked by "make fclean", will call the "clean" rule and also delete
+## your project binary plus your library. An error is returned in case of failure.
+##
+
+.PHONY:	fclean
+fclean:	clean
+	$(RM) $(NAME)
+	$(RM) lib/your_lib.a
+	$(eval($(CLE) = 42))
+ifeq ($(VOID),)
+	@echo -e "\033[31m* * * * *  CLEANED  * * * * *\033[0m"
+else
+        @$(error an error occurred while cleaning objects)
+endif
+
+##
+## this simple rule will call "fclean" and next "all".
+## it enable you to erase all intermediates files (objects and libraries)
+## and your project's binary before a complete recompilation.
+##
+
+.PHONY:	re
+re:	fclean all
+
+##
+## This implicit rules will be applied for upon objects files creation.
+## Objects file will be created in the obj/ folder while displaying a 
+## "[OK] your_file.c\n" if the current file correctly compiled,
+## otherwise "[KO] your_file.c\n" will be output in red.
+## Assuming your terminal can handle ASCII escape sequence.
+##
+
+obj/%.o:	src/%.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $(LDLIBS) -c -o $@ $< && echo -e "\e[32m[OK]\033[0m\e[1m\e[32m" $< "\033[0m" || echo -e "\e[91;5m[KO]\e[25m" $< "\033[0m"
+
+##
+## This deprecated rule will make all of your rule inside "silent".
+## It means that you will not see normal output in your terminal.
+## example: "make re" will display nothing upon successful completion.
+##
+## don't use the .SILENT's rule, as it is deprecated, instead prefer using the '@'
+## in front of your line.
+##
+
+$(VERBOSE).SILENT: all clean fclean re

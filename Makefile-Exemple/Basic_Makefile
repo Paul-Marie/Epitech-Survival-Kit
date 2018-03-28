@@ -1,0 +1,105 @@
+##
+## EPITECH PROJECT, 2018
+## 
+## File description:
+## This is a very basic makefile, did in Tek1
+##
+
+SRC	=	$(addprefix src/,	\
+		second_player.c		\
+		first_player.c		\
+		display_map2.c		\
+		concatenate.c		\
+		test_touch2_.c		\
+		test_touch2.c		\
+		test_touch_.c		\
+		test_touch.c		\
+		test_coord.c		\
+		print_map.c		\
+		get_coord.c		\
+		re_print2_.c		\
+		bad_lenght.c		\
+		re_print2.c		\
+		re_print_.c		\
+		re_print.c		\
+		in_bytes.c		\
+		test_pos.c		\
+		touched_.c		\
+		compare.c		\
+		touched.c		\
+		display.c		\
+		delete.c		\
+		attack.c		\
+		is_win.c		\
+		send.c			\
+		loop.c			\
+		init.c			\
+		fill.c			\
+		help.c			\
+		main.c)
+
+LIB	=	$(addprefix lib/my/,	\
+		my_strcapitalize.c	\
+		my_malloc_char.c	\
+		my_malloc_int.c		\
+		get_next_line.c		\
+		my_power_rec.c		\
+		int_to_bin.c		\
+		bin_to_int.c		\
+		my_put_nbr.c		\
+		my_putchar.c		\
+		is_number.c		\
+		my_revstr.c		\
+		my_revStr.c		\
+		separator.c		\
+		my_putstr.c		\
+		my_strlen.c		\
+		my_intlen.c		\
+		show_tab.c		\
+		number.c		\
+		my_tab.c		\
+		my_map.c		\
+		conv.c			\
+		hugo.c)
+
+
+OBJ	=	$(SRC:.c=.o)
+
+OBJL	=	$(LIB:.c=.o)
+
+LDFLAGS	=	-Wall -Wextra -Werror
+
+CFLAGS	=	-Iinclude $(LDFLAGS)
+
+CC	=	@gcc -c
+
+AR	=	@ar rc
+
+RM	=	rm -f
+
+NAME	=	navy
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ) $(OBJL)
+	@$(AR) libmy.a $(OBJL)
+	@mv libmy.a ./lib/my/
+	@gcc -o $(NAME) $(OBJ) -L. ./lib/my/libmy.a
+
+clean:
+	@$(RM) $(OBJ)
+	@echo -e "\e[31mCLEANED\033[0m"
+
+fclean:
+	@$(RM) $(OBJ)
+	@$(RM) $(OBJL)
+	@rm -f $(NAME)
+	@rm -f lib/my/libmy.a
+	@echo -e "\e[31mCLEANED\033[0m"
+
+re:	fclean all
+
+.c.o:	%.c
+	@$(CC) -c $< -o $@ $(CFLAGS) && echo -e "\e[32m[OK]\033[0m" $< || echo -e "\e[91;5m[KO]\e[25m" $< "\033[0m"
+
+.PHONY: all clean fclean re .c.o
