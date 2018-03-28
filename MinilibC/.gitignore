@@ -1,0 +1,14 @@
+*~
+*#
+*.o
+*.c
+*.a
+*.h
+*.so
+*.asm
+*.out
+asm
+!source/*.asm
+!bonus/*.asm
+!include/*.inc
+save/*
