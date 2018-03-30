@@ -1,0 +1,108 @@
+##
+##  This is a Basic Makefile Template
+##  Copyright (C) 2017  paul-marie.bettinelli@epitech.eu
+##
+##  This program is free software: you can redistribute it and/or modify
+##  it under the terms of the GNU General Public License as published by
+##  the Free Software Foundation, either version 3 of the License, or
+##  any later version.
+##
+##  This program is distributed in the hope that it will be useful,
+##  but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##  GNU General Public License for more details.
+##
+##  You should have received a copy of the GNU General Public License
+##  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+##
+
+##
+## THIS IS A DEFAULT MAKEFILE LIKE EVERY TEK' SHOULD HAVE
+##
+##  To use it, you must to have the following architecture:
+##  source / object / include / tests - repository for C, or
+##  Source / Object / Include / Tests - repository for C++
+##
+
+LD		=	@ld
+CC		=	@gcc
+CXX		=	@g++
+EXTENSION	=	.c
+
+ifeq ($(EXTENSION), .c)
+SRC		=	$(wildcard $(addprefix source/, *)$(EXTENSION))
+NOM		=	$(basename $(notdir $(SRC)))
+OBJ		=	$(addprefix object/, $(addsuffix .o, $(NOM)))
+SRC-CRIT	=	$(wildcard $(addprefix tests/, *)$(EXTENSION))
+OBJ-CRIT        =       $(SRC-CRIT:$(EXTENSION)=.o)
+else
+SRC		=	$(wildcard $(addprefix Source/, *)$(EXTENSION))
+NOM		=	$(basename $(notdir $(SRC)))
+OBJ		=	$(addprefix Object/, $(addsuffix .o, $(NOM)))
+SRC-CRIT	=	$(wildcard $(addprefix Tests/, *)$(EXTENSION))
+OBJ-CRIT        =       $(SRC-CRIT:$(EXTENSION)=.o)
+endif
+
+CPPFLAGS	+=	-Wall -Wextra -fPIC
+LDFLAGS		+=	-g3
+CFLAGS		+=	-Iinclude -fno-builtin
+CXXFLAGS	+=	-IInclude -fno-builtin
+CRITFLAGS	=	-lcriterion --coverage
+
+NAME		=	project_name
+
+END		=	\033[0m
+BOLD		=	\033[1m
+GREY		=	\033[30m
+RED		=	\033[31m
+GREEN		=	\033[32m
+YELLOW		=	\033[33m
+BLUE		=	\033[34m
+PURPLE		=	\033[35m
+CYAN		=	\033[36m
+WHITE		=	\033[37m
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+ifeq ($(EXTENSION), .c)
+	@$(CC) $(LDFLAGS) -o $(NAME) $(OBJ)
+else
+	@$(CXX) $(LDFLAGS) -o $(NAME) $(OBJ)
+endif
+	@echo "$(GREEN)* * * * * COMPLETED * * * * *$(END)"
+
+test_run:	$(OBJ-CRIT)
+ifeq ($(EXTENSION), .c)
+	@$(CC) $(CFLAGS) $(CRITFLAGS) $(OBJ-CRIT)
+else
+	@$(CXX) $(CXXFLAGS) $(CRITFLAGS) $(OBJ-CRIT)
+endif
+	@echo "$(GREEN)* * * * * COMPLETED * * * * *$(END)"
+	./a.out
+
+clean:
+	@find . -type f \( -iname "*~" \) -delete
+	@$(RM) $(OBJ)
+	@$(RM) $(OBJ-CRIT)
+	@echo "$(RED)* * * * *  CLEANED  * * * * *$(END)"
+
+fclean:	clean
+	@$(RM) $(NAME)
+	@$(RM) a.out
+
+re:	fclean all
+
+ifeq ($(EXTENSION), .c)
+object/%.o:	source/%$(EXTENSION)
+	@$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<			\
+	&& echo "$(GREEN)[OK]$(BOLD)" $< "$(END)"			\
+	|| echo "$(RED)[KO]$(BOLD)" $< "$(END)"
+else
+Object/%.o:	Source/%$(EXTENSION)
+	@$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c -o $@ $<			\
+	&& echo "$(GREEN)[OK]$(BOLD)" $< "$(END)"			\
+	|| echo "$(RED)[KO]$(BOLD)" $< "$(END)"
+endif
+
+.PHONY: all test_run clean fclean re
