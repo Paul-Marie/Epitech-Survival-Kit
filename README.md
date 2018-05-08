@@ -15,6 +15,14 @@ Click on the desired "Project Name".
 | [108trigo](https://github.com/Paul-Marie/108trigo) | rigor: **100%** / minimum tests: **100%** / exponential: **100%** / cosine: **100%** </br> sine: **100%** / hyperbolic cosine: **100%** / hyperbolic sine: **100%** | **20**    |
 | [109titration](https://github.com/Paul-Marie/109titration) | rigor: **90%** / minimum tests: **50%** / 1st derivative: **0%** / 2nd derivative: **0%** </br>interpolation: **0%** / equivalent point: **0%** / tricky: **0%** | **7,33**    |
 | [110borwein](https://github.com/Paul-Marie/110borwein) | rigor: **100%** / minimum tests: **100%** / rectangles: **100%** </br> trapezoids: **100%** / Simpson: **100%** | **20**    |
+
+| [201yams](https://github.com/Paul-Marie/201yams) | rigor: **14/17** / minimum tests: **7/7** / pair: **6/6** / three-of a-kind: **6/6** </br> four-of a-kind: **6/6** / full-house: **1/20** / straight: **10/20** / yams: **6/6** | **63,1**    |
+| [202unsold](https://github.com/Paul-Marie/202unsold) | rigor: **100%** / minimum tests: **100%** / joint law: **100%** </br> law of Z: **100%** / expected values: **100%** / variances: **100%** | **20**    |
+| [203hotline](https://github.com/Paul-Marie/203hotline) | rigor: **100%** / minimum tests: **100%** / combination: **100%** / binomial: **100%** </br> Poisson: **100%** / overload: **75%** / mathematical rigor: **100%** | **18,9**    |
+| [204ducks](https://github.com/Paul-Marie/204ducks) | rigor: **100%** / Return time: **100%** / Standard mean: **100%** </br> Time: **0%** / Percentage: **100%** | **16,2**    |
+| [205IQ](https://github.com/Paul-Marie/205IQ) | **-** | **-**    |
+| [206neutrinos](https://github.com/Paul-Marie/206neutrinos) | **-** | **20**    |
+
 | [B1MailPro](https://github.com/Paul-Marie/B1Mailpro)  |   | **15** |
 | [B1Lettre](https://github.com/Paul-Marie/B1Lettre)    |   | **11** |
 | [B2EMPLOI](https://github.com/Paul-Marie/B2EMPLOI)    |   | **15** |
@@ -25,6 +33,7 @@ Click on the desired "Project Name".
 | [B4BILAN](https://github.com/Paul-Marie/B4BILAN)      |   | **13**  |
 | [minilibC](https://github.com/Paul-Marie/minilibc) |   | **20**|
 | [minishell1](https://github.com/Paul-Marie/minishell1) |   | **20**|
+| [TekAdventure](https://github.com/Paul-Marie/TekAdventure) |   | **55**|
 
 # Important!
 **If you are seeing this repository, please just star it! it will not take much time!** :)
