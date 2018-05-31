@@ -4,11 +4,11 @@ It contains a part of all the small Epitech projects that are not worth the blow
 Click on the desired "Project Name".
 
 | Project Name    | Details                                                                                    | Notes (/20)  |
-| --------------- |:------------------------------------------------------------------------------------------ | :-----------:|
-| [101pong](https://github.com/Paul-Marie/101pong) | rigor: **80%** / vector: **100%** / trigonometry: **100%** / mathematical rigour: **83%** | **18,2**    |
-| [102cipher](https://github.com/Paul-Marie/102cipher) | rigor: **100%** / matrix: **100%** / encryption: **100%** / decryption: **50%**           | **17,93**   |
-| [103architect](https://github.com/Paul-Marie/103architect)   | rigor: **59%** / transformation matrices: **44%** / matricial multiplications: **41%**     | **10**       |
-| [104intersection](https://github.com/Paul-Marie/104intersection) | rigor: **94.74%** / sphere: **100%** / cylinder: **88.89%** / cone: **80%**                | **18,26**    |
+| --------------- |:------------------------------------------------------------------------------------------:| :-----------:|
+| [101pong](https://github.com/Paul-Marie/101pong) | rigor: **80%** / vector: **100%** / trigonometry: **100%** </br> mathematical rigour: **83%** | **18,2**    |
+| [102cipher](https://github.com/Paul-Marie/102cipher) | rigor: **100%** / matrix: **100%** / encryption: **100%** </br> decryption: **50%**           | **17,93**   |
+| [103architect](https://github.com/Paul-Marie/103architect)   | rigor: **59%** / transformation matrices: **44%** </br> matricial multiplications: **41%**     | **10**       |
+| [104intersection](https://github.com/Paul-Marie/104intersection) | rigor: **94.74%** / sphere: **100%** </br> cylinder: **88.89%** / cone: **80%**                | **18,26**    |
 | [105torus](https://github.com/Paul-Marie/105torus) | rigor: **70%** / mathematical rigor: **ko** </br> option 1: **42.86%** / option 2: **71.43%** / option 3: **57.14%** | **1,5**    |
 | [106bombyx](https://github.com/Paul-Marie/106bombyx) | rigor: **92%** / minimum tests: **100%** / number of individuals: **90%** </br> synthetic scheme: **90%** / mathematical rigor: **100%** | **18,6**    |
 | [107transfer](https://github.com/Paul-Marie/107transfer) | rigor: **100%** / minimum tests: **100%** / polynomials: **100%** / mathematical rigor: **100%** | **20**    |
