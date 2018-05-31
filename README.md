@@ -15,13 +15,13 @@ Click on the desired "Project Name".
 | [108trigo](https://github.com/Paul-Marie/108trigo) | rigor: **100%** / minimum tests: **100%** </br> exponential: **100%** / cosine: **100%** </br> sine: **100%** / hyperbolic cosine: **100%** </br> hyperbolic sine: **100%** | **20**    |
 | [109titration](https://github.com/Paul-Marie/109titration) | rigor: **90%** / minimum tests: **50%** </br> 1st derivative: **0%** / 2nd derivative: **0%** </br> interpolation: **0%** / equivalent point: **0%** / tricky: **0%** | **7,33**    |
 | [110borwein](https://github.com/Paul-Marie/110borwein) | rigor: **100%** / minimum tests: **100%** / rectangles: **100%** </br> trapezoids: **100%** / Simpson: **100%** | **20**    |
-| [201yams](https://github.com/Paul-Marie/201yams) | rigor: **14/17** / minimum tests: **7/7** / pair: **6/6** </br> three-of a-kind: **6/6** / four-of a-kind: **6/6** </br> full-house: **1/20** / straight: **10/20** / yams: **6/6** | **63,1**    |
-| [202unsold](https://github.com/Paul-Marie/202unsold) | rigor: **100%** / minimum tests: **100%** / joint law: **100%** </br> law of Z: **100%** / expected values: **100%** / variances: **100%** | **20**    |
-| [203hotline](https://github.com/Paul-Marie/203hotline) | rigor: **100%** / minimum tests: **100%** / combination: **100%** / binomial: **100%** </br> Poisson: **100%** / overload: **75%** / mathematical rigor: **100%** | **18,9**    |
+| [201yams](https://github.com/Paul-Marie/201yams) | rigor: **14/17** / minimum tests: **7/7** / pair: **6/6** </br> three-of a-kind: **6/6** / four-of a-kind: **6/6** </br> full-house: **1/20** / straight: **10/20** / yams: **6/6** | **12,2**    |
+| [202unsold](https://github.com/Paul-Marie/202unsold) | rigor: **100%** / minimum tests: **100%** / joint law: **100%** </br> law of Z: **100%** / expected values: **100%** </br> variances: **100%** | **20**    |
+| [203hotline](https://github.com/Paul-Marie/203hotline) | rigor: **100%** / minimum tests: **100%** </br> combination: **100%** / binomial: **100%** </br> Poisson: **100%** / overload: **75%** </br> mathematical rigor: **100%** | **18,9**    |
 | [204ducks](https://github.com/Paul-Marie/204ducks) | rigor: **100%** / Return time: **100%** / Standard mean: **100%** </br> Time: **0%** / Percentage: **100%** | **16,2**    |
-| [205IQ](https://github.com/Paul-Marie/205IQ) | rigor: **100%** / minimum tests: **100%** / curve: **100%** </br> IQ1: **100%** / IQ1 and IQ2: **100%** / mathematical rigor: **100%** | **20**    |
+| [205IQ](https://github.com/Paul-Marie/205IQ) | rigor: **100%** / minimum tests: **100%** / curve: **100%** </br> IQ1: **100%** / IQ1 and IQ2: **100%** </br> mathematical rigor: **100%** | **20**    |
 | [206neutrinos](https://github.com/Paul-Marie/206neutrinos) | rigor: **100%** / minimum tests: **100%** / standard deviation: **100%** / arithmetic mean: **100%** </br> root mean square mean: **100%** / harmonic mean: **100%** | **20**    |
-| [207demography](https://github.com/Paul-Marie/207demography) | rigor: **100%** / minimum tests: **71%** / standard deviation: **100%** / fit: **66%** <br> extrapolation: **66%** / correlation: **0%** | **14,4**    |
+| [207demography](https://github.com/Paul-Marie/207demography) | rigor: **100%** / minimum tests: **71%** </br> standard deviation: **100%** / fit: **66%** <br> extrapolation: **66%** / correlation: **0%** | **14,4**    |
 | [208dowels](https://github.com/Paul-Marie/208dowels) | **-** | **-**    |
 | [209poll](https://github.com/Paul-Marie/209poll) | **-** | **20**    |
 |                                                                                               |           |           |
