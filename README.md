@@ -24,7 +24,7 @@ Click on the desired "Project Name".
 | [207demography](https://github.com/Paul-Marie/207demography) | rigor: **100%** / minimum tests: **71%** / standard deviation: **100%** / fit: **66%** <br> extrapolation: **66%** / correlation: **0%** | **14,4**    |
 | [208dowels](https://github.com/Paul-Marie/208dowels) | **-** | **-**    |
 | [209poll](https://github.com/Paul-Marie/209poll) | **-** | **20**    |
-| **-----------------------------------------------------------------------------------------** | **-----** | **-----** |
+|                                                                                               |           |           |
 | [B1MailPro](https://github.com/Paul-Marie/B1Mailpro)                                          |           |   **15**  |
 | [B1Lettre](https://github.com/Paul-Marie/B1Lettre)                                            |           |   **11**  |
 | [B2EMPLOI](https://github.com/Paul-Marie/B2EMPLOI)                                            |           |   **15**  |
@@ -33,11 +33,11 @@ Click on the desired "Project Name".
 | [B4RECADRER](https://github.com/Paul-Marie/B4RECADRER)                                        |           |   **-**   |
 | [B4DIAPO](https://github.com/Paul-Marie/B4DIAPO)                                              |           |   **19**  |
 | [B4BILAN](https://github.com/Paul-Marie/B4BILAN)                                              |           |   **13**  |
-| **-----------------------------------------------------------------------------------------** | **-----** | **-----** |
+|                                                                                               |           |           |
 | [minilibC](https://github.com/Paul-Marie/minilibc)                                            |           |   **20**  |
-| **-----------------------------------------------------------------------------------------** | **-----** | **-----** |
+|                                                                                               |           |           |
 | [minishell1](https://github.com/Paul-Marie/minishell1) |                                      |           |   **20**  |
-| **-----------------------------------------------------------------------------------------** | **-----** | **-----** |
+|                                                                                               |           |           |
 | [TekAdventure](https://github.com/Paul-Marie/TekAdventure)                                    |           |   **55**  |
 
 # Important!
