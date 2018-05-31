@@ -36,7 +36,7 @@ Click on the desired "Project Name".
 |                                                                                               |           |           |
 | [minilibC](https://github.com/Paul-Marie/minilibc)                                            |           |   **20**  |
 |                                                                                               |           |           |
-| [minishell1](https://github.com/Paul-Marie/minishell1) |                                      |           |   **20**  |
+| [minishell1](https://github.com/Paul-Marie/minishell1)                                        |           |   **20**  |
 |                                                                                               |           |           |
 | [TekAdventure](https://github.com/Paul-Marie/TekAdventure)                                    |           |   **55**  |
 
