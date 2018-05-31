@@ -34,7 +34,7 @@ Click on the desired "Project Name".
 | [B4DIAPO](https://github.com/Paul-Marie/B4DIAPO)                                              |           |   **19**  |
 | [B4BILAN](https://github.com/Paul-Marie/B4BILAN)                                              |           |   **13**  |
 |                                                                                               |           |           |
-| [minilibC](https://github.com/Paul-Marie/minilibc)                                            |strlen:	**100%** / strchr: **100%** / rindex: **100%** / strstr: **100%** </br> strpbrk: **100%** / strcspn: **100%** / strcmp: **100%** / strncmp: **100%**
+| [minilibC](https://github.com/Paul-Marie/minilibc)                                            | strlen:	**100%** / strchr: **100%** / rindex: **100%** / strstr: **100%** </br> strpbrk: **100%** / strcspn: **100%** / strcmp: **100%** / strncmp: **100%**
 </br> strcasecmp: **100%** / memset: **100%** / memcpy: **100%** / memmove: **100%**                        |   **20**  |
 |                                                                                               |           |           |
 | [minishell1](https://github.com/Paul-Marie/minishell1)                                        |           |   **20**  |
