@@ -19,19 +19,26 @@ Click on the desired "Project Name".
 | [202unsold](https://github.com/Paul-Marie/202unsold) | rigor: **100%** / minimum tests: **100%** / joint law: **100%** </br> law of Z: **100%** / expected values: **100%** / variances: **100%** | **20**    |
 | [203hotline](https://github.com/Paul-Marie/203hotline) | rigor: **100%** / minimum tests: **100%** / combination: **100%** / binomial: **100%** </br> Poisson: **100%** / overload: **75%** / mathematical rigor: **100%** | **18,9**    |
 | [204ducks](https://github.com/Paul-Marie/204ducks) | rigor: **100%** / Return time: **100%** / Standard mean: **100%** </br> Time: **0%** / Percentage: **100%** | **16,2**    |
-| [205IQ](https://github.com/Paul-Marie/205IQ) | **-** | **-**    |
-| [206neutrinos](https://github.com/Paul-Marie/206neutrinos) | **-** | **20**    |
-| [B1MailPro](https://github.com/Paul-Marie/B1Mailpro)  |   | **15** |
-| [B1Lettre](https://github.com/Paul-Marie/B1Lettre)    |   | **11** |
-| [B2EMPLOI](https://github.com/Paul-Marie/B2EMPLOI)    |   | **15** |
-| [B2PRECISER](https://github.com/Paul-Marie/B2PRECISER)|   | **15** |
-| [B2VENTE](https://github.com/Paul-Marie/B2VENTE)      |   | **19** |
-| [B4RECADRER](https://github.com/Paul-Marie/B4RECADRER)|   | **-**  |
-| [B4DIAPO](https://github.com/Paul-Marie/B4DIAPO)      |   | **19** |
-| [B4BILAN](https://github.com/Paul-Marie/B4BILAN)      |   | **13**  |
-| [minilibC](https://github.com/Paul-Marie/minilibc) |   | **20**|
-| [minishell1](https://github.com/Paul-Marie/minishell1) |   | **20**|
-| [TekAdventure](https://github.com/Paul-Marie/TekAdventure) |   | **55**|
+| [205IQ](https://github.com/Paul-Marie/205IQ) | rigor: **100%** / minimum tests: **100%** / curve: **100%** </br> IQ1: **100%** / IQ1 and IQ2: **100%** / mathematical rigor: **100%** | **20**    |
+| [206neutrinos](https://github.com/Paul-Marie/206neutrinos) | rigor: **100%** / minimum tests: **100%** / standard deviation: **100%** / arithmetic mean: **100%** </br> root mean square mean: **100%** / harmonic mean: **100%** | **20**    |
+| [207demography](https://github.com/Paul-Marie/207demography) | rigor: **100%** / minimum tests: **71%** / standard deviation: **100%** / fit: **66%** <br> extrapolation: **66%** / correlation: **0%** | **14,4**    |
+| [208dowels](https://github.com/Paul-Marie/208dowels) | **-** | **-**    |
+| [209poll](https://github.com/Paul-Marie/209poll) | **-** | **20**    |
+| **-----------------------------------------------------------------------------------------** | **-----** | **-----** |
+| [B1MailPro](https://github.com/Paul-Marie/B1Mailpro)                                          |           |   **15**  |
+| [B1Lettre](https://github.com/Paul-Marie/B1Lettre)                                            |           |   **11**  |
+| [B2EMPLOI](https://github.com/Paul-Marie/B2EMPLOI)                                            |           |   **15**  |
+| [B2PRECISER](https://github.com/Paul-Marie/B2PRECISER)                                        |           |   **15**  |
+| [B2VENTE](https://github.com/Paul-Marie/B2VENTE)                                              |           |   **19**  |
+| [B4RECADRER](https://github.com/Paul-Marie/B4RECADRER)                                        |           |   **-**   |
+| [B4DIAPO](https://github.com/Paul-Marie/B4DIAPO)                                              |           |   **19**  |
+| [B4BILAN](https://github.com/Paul-Marie/B4BILAN)                                              |           |   **13**  |
+| **-----------------------------------------------------------------------------------------** | **-----** | **-----** |
+| [minilibC](https://github.com/Paul-Marie/minilibc)                                            |           |   **20**  |
+| **-----------------------------------------------------------------------------------------** | **-----** | **-----** |
+| [minishell1](https://github.com/Paul-Marie/minishell1) |                                      |           |   **20**  |
+| **-----------------------------------------------------------------------------------------** | **-----** | **-----** |
+| [TekAdventure](https://github.com/Paul-Marie/TekAdventure)                                    |           |   **55**  |
 
 # Important!
 **If you are seeing this repository, please just star it! it will not take much time!** :)
