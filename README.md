@@ -22,7 +22,7 @@ Click on the desired "Project Name".
 | [205IQ](https://github.com/Paul-Marie/205IQ) | rigor: **100%** / minimum tests: **100%** / curve: **100%** </br> IQ1: **100%** / IQ1 and IQ2: **100%** </br> mathematical rigor: **100%** | **20**    |
 | [206neutrinos](https://github.com/Paul-Marie/206neutrinos) | rigor: **100%** / minimum tests: **100%** / standard deviation: **100%** / arithmetic mean: **100%** </br> root mean square mean: **100%** / harmonic mean: **100%** | **20**    |
 | [207demography](https://github.com/Paul-Marie/207demography) | rigor: **100%** / minimum tests: **71%** </br> standard deviation: **100%** / fit: **66%** <br> extrapolation: **66%** / correlation: **0%** | **14,4**    |
-| [208dowels](https://github.com/Paul-Marie/208dowels) | **-** | **-**    |
+| [208dowels](https://github.com/Paul-Marie/208dowels) | rigor: **100%** / minimum tests: **75%** / shrinking: **100%** </br> distribution: **100%** / validity: **66%** | **17,8**    |
 | [209poll](https://github.com/Paul-Marie/209poll) | rigor: **100%** / minimum tests: **100%** / regular test: **100%** / tricky tests: **100%** | **20**    |
 |                                                                                               |           |           |
 | [B1MailPro](https://github.com/Paul-Marie/B1Mailpro)                                          |           |   **15**  |
