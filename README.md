@@ -23,7 +23,7 @@ Click on the desired "Project Name".
 | [206neutrinos](https://github.com/Paul-Marie/206neutrinos) | rigor: **100%** / minimum tests: **100%** / standard deviation: **100%** / arithmetic mean: **100%** </br> root mean square mean: **100%** / harmonic mean: **100%** | **20**    |
 | [207demography](https://github.com/Paul-Marie/207demography) | rigor: **100%** / minimum tests: **71%** </br> standard deviation: **100%** / fit: **66%** <br> extrapolation: **66%** / correlation: **0%** | **14,4**    |
 | [208dowels](https://github.com/Paul-Marie/208dowels) | **-** | **-**    |
-| [209poll](https://github.com/Paul-Marie/209poll) | **-** | **20**    |
+| [209poll](https://github.com/Paul-Marie/209poll) | rigor: **100%** / minimum tests: **100%** / regular test: **100%** / tricky tests: **100%** | **20**    |
 |                                                                                               |           |           |
 | [B1MailPro](https://github.com/Paul-Marie/B1Mailpro)                                          |           |   **15**  |
 | [B1Lettre](https://github.com/Paul-Marie/B1Lettre)                                            |           |   **11**  |
