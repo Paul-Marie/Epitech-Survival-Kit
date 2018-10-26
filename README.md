@@ -1,7 +1,6 @@
 # Epitech-Survival-Kit
-It contains a part of all the small Epitech projects that are not worth the blows of spending a lot of time
 
-Click on the desired "Project Name".
+![PUB](5d41402abc4b2a76b9719d911017c592)
 
 | Project Name    | Details                                                                                    | Notes (/20)  |
 | --------------- |:------------------------------------------------------------------------------------------:| :-----------:|
