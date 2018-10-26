@@ -36,11 +36,14 @@
 | [B4DIAPO](https://github.com/Paul-Marie/B4DIAPO)                                              |           |   **19**  |
 | [B4BILAN](https://github.com/Paul-Marie/B4BILAN)                                              |           |   **13**  |
 |   |   | - |
-| [minilibC](https://github.com/Paul-Marie/minilibc)  | strlen: **100%** / strchr: **100%** / rindex: **100%** </br> strstr: **100%** / strpbrk: **100%** / strcspn: **100%** </br> strcmp: **100%** / strncmp: **100%** / strcasecmp: **100%** </br> memset: **100%** / memcpy: **100%** / memmove: **100%**               |   **20**  |
-|   |   | - |
 | [minishell1](https://github.com/Paul-Marie/minishell1)                                        |           |   **20**  |
 |   |   | - |
 | [TekAdventure](https://github.com/Paul-Marie/TekAdventure)                                    |           |   **55**  |
+|   |   | - |
+| [bollinger](https://github.com/Paul-Marie/bollinger/blob/master/bollinger) | crypto_currency: **3 / 3** / forex: **3 / 3** / mathematical rigor: **13 / 13** </br> raw_material: **3 / 3** / rigor: **7 / 7** / stock_exchange: **3 / 3** | **20** |
+| [trade](https://github.com/Paul-Marie/trade/blob/master/trade) | Crypto-currency **15 / 15** / Raw material **10 / 15** / Stock exchange **5 / 15** / FOREX **10 / 15** </br> Total **5 / 15** / Algo **2 / 2** / Risk factor **2 / 3** / Machine Learning **0 / 10** </br> GUI **3 / 5** / Helping tools **1 / 3** / Other bonuses **0 / 10** | **55** |
+|   |   | - |
+| [minilibC](https://github.com/Paul-Marie/minilibc)  | strlen: **100%** / strchr: **100%** / rindex: **100%** </br> strstr: **100%** / strpbrk: **100%** / strcspn: **100%** </br> strcmp: **100%** / strncmp: **100%** / strcasecmp: **100%** </br> memset: **100%** / memcpy: **100%** / memmove: **100%**               |   **20**  |
 |   |   | - |
 | [My-Nas](https://github.com/Paul-Marie/my-nas)                                                |           |   **31**  |
 |   |   | - |
