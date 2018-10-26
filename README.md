@@ -1,6 +1,6 @@
 # Epitech-Survival-Kit
 
-Star it ![PUB](5d41402abc4b2a76b9719d911017c592.png){: .callout}
+Star it <img align="right" src="5d41402abc4b2a76b9719d911017c592.png">
 
 | Project Name    | Details                                                                                    | Notes (/20)  |
 | --------------- |:------------------------------------------------------------------------------------------:| :-----------:|
