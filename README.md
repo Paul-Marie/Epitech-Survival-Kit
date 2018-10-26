@@ -15,7 +15,7 @@ Click on the desired "Project Name".
 | [108trigo](https://github.com/Paul-Marie/108trigo) | rigor: **100%** / minimum tests: **100%** </br> exponential: **100%** / cosine: **100%** </br> sine: **100%** / hyperbolic cosine: **100%** </br> hyperbolic sine: **100%** | **20**    |
 | [109titration](https://github.com/Paul-Marie/109titration) | rigor: **90%** / minimum tests: **50%** </br> 1st derivative: **0%** / 2nd derivative: **0%** </br> interpolation: **0%** / equivalent point: **0%** / tricky: **0%** | **7,33**    |
 | [110borwein](https://github.com/Paul-Marie/110borwein) | rigor: **100%** / minimum tests: **100%** / rectangles: **100%** </br> trapezoids: **100%** / Simpson: **100%** | **20**    |
-| - | - | - |
+|   |   | - |
 | [201yams](https://github.com/Paul-Marie/201yams) | rigor: **14/17** / minimum tests: **7/7** / pair: **6/6** </br> three-of a-kind: **6/6** / four-of a-kind: **6/6** </br> full-house: **1/20** / straight: **10/20** / yams: **6/6** | **12,2**    |
 | [202unsold](https://github.com/Paul-Marie/202unsold) | rigor: **100%** / minimum tests: **100%** / joint law: **100%** </br> law of Z: **100%** / expected values: **100%** </br> variances: **100%** | **20**    |
 | [203hotline](https://github.com/Paul-Marie/203hotline) | rigor: **100%** / minimum tests: **100%** </br> combination: **100%** / binomial: **100%** </br> Poisson: **100%** / overload: **75%** </br> mathematical rigor: **100%** | **18,9**    |
@@ -28,19 +28,23 @@ Click on the desired "Project Name".
 |   |   | - |
 | [B1MailPro](https://github.com/Paul-Marie/B1Mailpro)                                          |           |   **15**  |
 | [B1Lettre](https://github.com/Paul-Marie/B1Lettre)                                            |           |   **11**  |
+|   |   | - |
 | [B2EMPLOI](https://github.com/Paul-Marie/B2EMPLOI)                                            |           |   **15**  |
 | [B2PRECISER](https://github.com/Paul-Marie/B2PRECISER)                                        |           |   **15**  |
 | [B2VENTE](https://github.com/Paul-Marie/B2VENTE)                                              |           |   **19**  |
+|   |   | - |
 | [B4RECADRER](https://github.com/Paul-Marie/B4RECADRER)                                        |           |   **-**   |
 | [B4DIAPO](https://github.com/Paul-Marie/B4DIAPO)                                              |           |   **19**  |
 | [B4BILAN](https://github.com/Paul-Marie/B4BILAN)                                              |           |   **13**  |
 |   |   | - |
 | [minilibC](https://github.com/Paul-Marie/minilibc)  | strlen: **100%** / strchr: **100%** / rindex: **100%** </br> strstr: **100%** / strpbrk: **100%** / strcspn: **100%** </br> strcmp: **100%** / strncmp: **100%** / strcasecmp: **100%** </br> memset: **100%** / memcpy: **100%** / memmove: **100%**               |   **20**  |
-|                                                                                               |           |           |
+|   |   | - |
 | [minishell1](https://github.com/Paul-Marie/minishell1)                                        |           |   **20**  |
-|                                                                                               |           |           |
+|   |   | - |
 | [TekAdventure](https://github.com/Paul-Marie/TekAdventure)                                    |           |   **55**  |
+|   |   | - |
 | [My-Nas](https://github.com/Paul-Marie/my-nas)                                                |           |   **31**  |
+|   |   | - |
 | [Makefile Tutorial](https://github.com/Paul-Marie/Makefile-Example)                           |           |           |
 
 # Important!
