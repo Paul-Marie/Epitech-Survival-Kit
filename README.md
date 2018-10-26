@@ -1,7 +1,6 @@
 # Epitech-Survival-Kit
 
-Star it <img align="float" src="5d41402abc4b2a76b9719d911017c592.png">
-![IMakeMyAd](5d41402abc4b2a76b9719d911017c592.png){:style="float: right;margin-right: 7px;margin-top: 7px;"}
+##Don't forget to star this repository :) <img align="right" src="5d41402abc4b2a76b9719d911017c592.png">
 
 | Project Name    | Details                                                                                    | Notes (/20)  |
 | --------------- |:------------------------------------------------------------------------------------------:| :-----------:|
