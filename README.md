@@ -1,7 +1,7 @@
 # Epitech-Survival-Kit
----
-#<img align="center" src="5d41402abc4b2a76b9719d911017c592.png">
-#
+
+<!--<img align="center" src="5d41402abc4b2a76b9719d911017c592.png">
+
 | Project Name    | Details                                                                                    | Notes (/20)  |
 | --------------- |:------------------------------------------------------------------------------------------:| :-----------:|
 | [101pong](https://github.com/Paul-Marie/101pong) | rigor: **80%** / vector: **100%** / trigonometry: **100%** </br> mathematical rigour: **83%** | **18,2**    |
@@ -47,7 +47,7 @@
 |   |   | - |
 | [My-Nas](https://github.com/Paul-Marie/my-nas)                                                |           |   **31**  |
 |   |   | - |
-| [Makefile Tutorial](https://github.com/Paul-Marie/Makefile-Example)                           |           |           |
----
+| [Makefile Tutorial](https://github.com/Paul-Marie/Makefile-Example)                           |           |           |--!>
+
 # Important!
 **If you are seeing this repository, please just star it! it will not take much time!** :)
