@@ -1,5 +1,5 @@
 # Epitech-Survival-Kit
-
+---
 <img align="center" src="5d41402abc4b2a76b9719d911017c592.png">
 
 | Project Name    | Details                                                                                    | Notes (/20)  |
@@ -48,6 +48,6 @@
 | [My-Nas](https://github.com/Paul-Marie/my-nas)                                                |           |   **31**  |
 |   |   | - |
 | [Makefile Tutorial](https://github.com/Paul-Marie/Makefile-Example)                           |           |           |
-
+---
 # Important!
 **If you are seeing this repository, please just star it! it will not take much time!** :)
